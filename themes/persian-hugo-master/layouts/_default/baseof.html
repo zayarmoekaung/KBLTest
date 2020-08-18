@@ -3,6 +3,8 @@
 {{- partial "head.html" . -}}
 
 <body>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="XiYLGsAX"></script>
+
 	{{- partial "preloader.html" . -}}
 	{{- partial "header.html" . -}}
 	{{- block "main" . }}{{- end }}
