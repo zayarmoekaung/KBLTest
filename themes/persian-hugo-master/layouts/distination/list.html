@@ -1,4 +1,4 @@
-
+{{ define "main" }}
 <style>
 * {
   box-sizing: border-box;
@@ -110,42 +110,22 @@ h1 {
 <h1>Destinations</h1>
 <!-- Photo Grid -->
 <div class="row1" > 
+  {{ range where  .Site.Pages "Type" "destination" }}
   <div class="column">
         
-       {{ range first 2 (where  .Data.Pages "Type" "destination") }}
+       
         <div class="container" onclick="location.href='{{.Permalink}}';">
         <div class="imgblur"></div>
          <img class="gimg" src="{{ .Params.Image | absURL }}">
         <div class=" centered">{{ .Title }}</div> 
       </div>
 
-      {{end}}
-      <div class="container"  onclick="location.href='/distination';">
-        <div class="imgblur"></div>
-         <img class="gimg" src="/travel.jpg">
-        <div class=" centered">See All Destinations</div> 
-      </div>
+      
 </div>
-<div class="column">
-  {{ range first 2 (after 2   (  where .Data.Pages "Type" "destination")) }}
-        <div class="container" onclick="location.href='{{.Permalink}}';">
-        <div class="imgblur"></div>
-         <img class="gimg" src="{{ .Params.Image | absURL }}">
-        <div class=" centered">{{ .Title }}</div> 
-      </div>
-
-      {{end}}
-</div>  
+{{end}}
      
 
   
   
 </div>
-
-<script>
-// Get the elements with class="column"
-
-</script>
-
-
-
+{{end}}

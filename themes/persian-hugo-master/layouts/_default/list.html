@@ -3,7 +3,7 @@
 <section class="section-sm">
   <div class="container">
     <div class="text-center">
-      <h1 class="text-center display-3">Items are showing from {{.Title}}</h1>
+      <h1 class="text-center display-3">{{.Title}}</h1>
     </div>
   </div>
 </section>
@@ -14,9 +14,9 @@
       {{ $paginator := .Paginate .Data.Pages }}
       {{ range $index,$elements:= $paginator.Pages }}
       {{ if eq $index 0}}
-      <div class="col-12 mb-4">
-        <div class="post">
-          <img src="{{ .Params.Image | absURL }}" class="img-fluid w-100" alt="{{ .Title }}">
+      <div class="col-12 mb-4"  onclick="location.href='{{.Permalink}}';" style="cursor: pointer;">
+        <div class="post" style="max-width: 100%; height: 300px;">
+          <img src="{{ .Params.Image | absURL }}" class="img-fluid w-100" alt="{{ .Title }}" style="max-width: 100%; height: 300px; object-fit: cover;">
           <div class="post-content">
             <div class="post-date">
               <span>{{ .PublishDate.Format "02" }}</span>
@@ -32,9 +32,9 @@
         </div>
       </div>
       {{ else }}
-      <div class="col-md-6 mb-4">
+      <div class="col-md-6 mb-4"  onclick="location.href='{{.Permalink}}';" style="max-width: 300px; height: auto; margin: auto; display: block; cursor: pointer;">
         <div class="post post-sm">
-          <img src="{{ .Params.Image | absURL }}" class="img-fluid w-100" alt="{{ .Title }}">
+          <img src="{{ .Params.Image | absURL }}" class="img-fluid w-100" alt="{{ .Title }}" style="max-width: 300px; height: auto; object-fit: cover;">
           <div class="post-content">
             <div class="post-date">
               <span>{{ .PublishDate.Format "02" }}</span>
