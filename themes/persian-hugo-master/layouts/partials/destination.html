@@ -106,19 +106,19 @@ h1 {
 
 </style>
 
+<h1><span>Destinations</span></h1>
 
-<h1>Destinations</h1>
 <!-- Photo Grid -->
 <div class="row1" > 
   <div class="column">
-        
+       
        {{ range first 2 (where  .Data.Pages "Type" "destination") }}
-        <div class="container" onclick="location.href='{{.Permalink}}';">
+        <div class="container" onclick="location.href='{{.Permalink}}';" >
         <div class="imgblur"></div>
          <img class="gimg" src="{{ .Params.Image | absURL }}">
         <div class=" centered">{{ .Title }}</div> 
       </div>
-
+      
       {{end}}
       <div class="container"  onclick="location.href='/distination';">
         <div class="imgblur"></div>

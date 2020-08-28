@@ -2,8 +2,8 @@
 	
 </style>
 <div style="margin-top: 20px;">
-<h1>Travel Tips</h1>	
-{{ range first 2 (where  .Site.Pages "Type" "hotetip") }}
+<h1>Hotel Review</h1>	
+{{ range first 2 (where  .Site.Pages "Type" "hoterev") }}
  
       <div class="col-md-6 mb-4"  onclick="location.href='{{.Permalink}}';" style="cursor: pointer; width: 100%; height: 300px; margin: auto; display: block; ">
         <div class="post post-sm">
